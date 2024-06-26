@@ -8,7 +8,20 @@
     --color-secondary: 66 66 66;
     font-family: 'Poppins', sans-serif;
   }
+  ::-moz-selection { 
+    background: #00ADB5;
+  }
+  
+  ::selection {
+    background: #00ADB5;
+  }
 }
+
+.outlined-text {
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+}
+
 
 .ham {
   cursor: pointer;

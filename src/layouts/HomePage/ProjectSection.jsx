@@ -8,7 +8,7 @@ import { CgMoreO } from "react-icons/cg";
 
 const ProjectSection = () => {
   return (
-    <div className='flex flex-col justify-center py-10 px-8 gap-10'>
+    <div className='flex flex-col justify-center py-10 px-8 gap-10 bg-white'>
       <LabelUnderLine name='Projects'/>
       <div className='flex flex-wrap gap-3 justify-center items-center'>
         {Data.slice(0,3).map((item, index) => (

@@ -32,6 +32,8 @@ export default {
       fontFamily: {
         'serif': ['Chelsea Market', 'system-ui'],
         'name' : ["Playfair Display", 'sans-serif'],
+        'banner1' : ["Great Vibes", 'sans-serif'],
+        'banner2' : ["Niconne", 'sans-serif'],
       },
     },
   },
