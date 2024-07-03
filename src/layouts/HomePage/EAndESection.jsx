@@ -49,11 +49,11 @@ const EAndESection = () => {
     },
   ]
   return (
-    <div className='flex flex-col justify-center text-center items-center py-10 px-8 bg-white md:text-left'>
-      <LabelUnderLine name='Education And Experience'/>
+    <div className='flex flex-col justify-center text-center bg-primary items-center py-10 px-8 text-white md:text-left md:items-start'>
+      <LabelUnderLine name='Education And Experience' status={1}/>
       <div className='flex flex-col py-5 mt-10 gap-2 md:flex-row'>
         <div className='flex flex-col justify-center items-center text-left'>
-          <h1 className='text-2xl font-semibold mb-5'>My Education</h1>
+          <h1 className='text-xl sm:text-2xl font-semibold mb-5'>My Education</h1>
           <div className='flex flex-col'>
             {education.map((edu, index) => (
               <TimeLineCard 
@@ -67,7 +67,7 @@ const EAndESection = () => {
             ))}
           </div>
         </div>
-        <div className='flex flex-col justify-center items-center text-left'>
+        <div className='flex flex-col justify-center items-center text-left mt-10 sm:mt-0'>
           <h1 className='text-2xl font-bold mb-5'>My Expericence</h1>
           <div className='flex flex-col'>
             {expericence.map((exp, index) => (

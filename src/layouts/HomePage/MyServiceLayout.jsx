@@ -30,10 +30,10 @@ const MyServiceLayout = () => {
     }
   ]
   return (
-    <div className='flex flex-col gap-8 items-center justify-center pt-20 bg-white'>
+    <div className='flex flex-col gap-8 items-center justify-center py-20 bg-white'>
       <div className='flex flex-col gap-3 items-center justify-center'>
-        <h4 className='text-lg font-serif'>What I Will Do For You</h4>
-        <h1 className='text-5xl font-bold'>SERVICE</h1>
+        <h4 className='text-md sm:text-lg font-serif'>What I Will Do For You</h4>
+        <h1 className='text-3xl sm:text-5xl font-bold'>SERVICE</h1>
       </div>
       <div className='flex flex-wrap items-center justify-center gap-5'>
         {services.map((service, index) => (

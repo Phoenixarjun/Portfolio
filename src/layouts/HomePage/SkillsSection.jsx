@@ -36,9 +36,9 @@ const SkillsSection = () => {
     }
   ]
   return (
-    <div className='flex flex-col px-8 pt-20 h-96 gap-10 bg-white'>
+    <div className='flex flex-col px-8 pt-20 h-full gap-10 bg-white'>
       <LabelUnderLine name='Skills'/>
-      <div className='flex flex-wrap gap-5 items-center justify-center'>
+      <div className='flex flex-wrap gap-5 items-center justify-center h-full'>
         {skills.map((skill, index) => (
           <SkillLevel 
             key={index} 

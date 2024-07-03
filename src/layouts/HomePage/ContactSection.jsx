@@ -60,14 +60,14 @@ const ContactSection = () => {
   };
 
   return (
-    <div className='flex flex-col items-center justify-center gap-2 bg-white h-full py-10 text-primary'>
+    <div className='flex flex-col items-center justify-center gap-2 bg-white h-full py-10 text-primary px-5 sm:px-0'>
       <div className='flex flex-col gap-1 items-center justify-center'>
         <h1 className='text-4xl font-semibold'>Contact Me</h1>
         <h3 className='font-serif text-md'>I'd Love to hear from you!</h3>
       </div>
       <div className='flex flex-col w-full max-w-md mt-10'>
         <form ref={form} onSubmit={sendEmail} className='flex flex-col gap-4'>
-          <div className='flex gap-2'>
+          <div className='flex flex-col gap-2 md:flex-row'>
             <div>
               <label className='block mb-2 text-sm font-bold text-gray-700'>Name</label>
               <input
