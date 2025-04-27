@@ -1,29 +1,53 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react';
+import * as Progress from '@radix-ui/react-progress';
 
-const SkillLevel = ({ name, color, level }) => {
-  const [width, setWidth] = useState('0%')
+const SkillLevel = ({ name, color, level, shouldAnimate }) => {
+  const [progress, setProgress] = React.useState(0);
 
-  useEffect(() => {
-    const levelPercentage = level
-    setTimeout(() => {
-      setWidth(`${levelPercentage}%`)
-    }, 1000) 
-  }, [level])
+  React.useEffect(() => {
+    if (shouldAnimate) {
+      setProgress(level);
+    } else {
+      setProgress(0);
+    }
+  }, [level, shouldAnimate]);
+
+  const getEmoji = (level) => {
+    if (level >= 90) return "./animations/Excellent.gif";
+    if (level >= 70) return "./animations/Good.gif";
+    if (level >= 50) return "./animations/Moderate.gif";
+    return "./animations/Sad.gif";
+  };
 
   return (
     <div className='flex flex-col gap-2 w-2/5'>
-      <h4 className='font-bold'>{name}</h4>
-      <div className='relative w-full h-4 bg-gray-200 rounded-3xl shadow'>
-        <div
-          className='absolute h-full rounded-3xl transition-all duration-700 ease-linear'
-          style={{
-            width: width,
-            backgroundColor: color
-          }}
-        ></div>
+      <div className='flex justify-between items-center'>
+        <h4 className='font-bold text-white'>{name}</h4>
+        {shouldAnimate && (
+          <img 
+            src={getEmoji(level)} 
+            alt="skill level indicator" 
+            className='w-6 h-6 transition-opacity duration-300 ease-in-out'
+          />
+        )}
       </div>
+      
+      <Progress.Root
+        className="relative h-4 w-full overflow-hidden rounded-full bg-gray-200/30 shadow-inner"
+        style={{ transform: 'translateZ(0)' }}
+        value={progress}
+      >
+        <Progress.Indicator
+          className="h-full w-full rounded-full transition-transform duration-1000 ease-[cubic-bezier(0.65,0,0.35,1)]"
+          style={{
+            transform: `translateX(-${100 - progress}%)`,
+            backgroundColor: color,
+            boxShadow: `0 0 8px ${color}`
+          }}
+        />
+      </Progress.Root>
     </div>
-  )
-}
+  );
+};
 
-export default SkillLevel
+export default SkillLevel;

@@ -4,31 +4,32 @@ import ServiceCard from '../../components/HomePage/ServiceCard'
 const MyServiceLayout = () => {
   const services = [
     {
-      name: 'Web Development',
-      description: 'I will create a beautiful, responsive, and user-friendly website for you.',
-      img: './logo/WebDevelopment.jpg'
+      name: 'Full Stack Web Development',
+      description: 'Building complete, responsive, and scalable web applications for your business.',
+      img: './logo/webDevelopment.png'
     },
     {
-      name: 'Web Design',
-      description: 'I will design a beautiful, responsive, and user-friendly website for you.',
-      img: './logo/WebDevelopment.jpg'
+      name: 'Data Analytics & Visualization',
+      description: 'Transforming raw data into actionable insights with stunning dashboards and reports.',
+      img: './logo/dataAnalysis.png'
     },
     {
-      name: 'Mobile Development',
-      description: 'I will create a beautiful, responsive, and user-friendly mobile app for you.',
-      img: './logo/WebDevelopment.jpg'
+      name: 'AI & Machine Learning Solutions',
+      description: 'Creating smart AI models that learn, predict, and drive better outcomes.',
+      img: './logo/machineLearning.png'
     },
     {
-      name: 'Data Analysis',
-      description: 'I will analyze your data and provide you with insights and recommendations.',
-      img: './logo/WebDevelopment.jpg'
+      name: 'Generative AI & Custom Chatbots',
+      description: 'Building AI-powered tools, chatbots, and automation tailored to your needs.',
+      img: './logo/artificialIntelligence.png'
     },
     {
-      name: 'Artificial Intelligence',
-      description: 'I will create a beautiful, responsive, and user-friendly AI model for you.',
-      img: './logo/WebDevelopment.jpg'
+      name: 'Cloud Deployment & DevOps',
+      description: 'Deploying, scaling, and managing apps with Docker, Kubernetes, and cloud platforms.',
+      img: './logo/Cloud.png'
     }
   ]
+  
   return (
     <div className='flex flex-col gap-8 items-center justify-center py-20 bg-white'>
       <div className='flex flex-col gap-3 items-center justify-center'>

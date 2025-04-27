@@ -11,6 +11,7 @@ const ProjectLayout = ({ project }) => {
         <TitleCard
           title={project.name} 
           description={project.description}
+          cardImg ={project.cardImg}
         />
       </div>
       <div>

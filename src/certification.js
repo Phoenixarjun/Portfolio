@@ -1,14 +1,14 @@
 const certifications = [
   {
-    name: "Certified JavaScript Developer",
-    description: "This certification validates your expertise in JavaScript, covering core concepts, advanced techniques, and modern development practices.",
+    name: "Build Your Own Dynamic Web Application",
+    description: "Certified in dynamic web application development, covering foundational JavaScript to advanced full-stack techniques, with hands-on project experience.",
     logo: "./logo/Nxtwave.png",
     certificateImg: "./images/jsCertificate.png",
     credentialLink: "https://certificates.ccbp.in/academy/static-website?id=JZBGHEBOGG",
-    platforms: ["Udemy", "Coursera"],
+    platforms: ["NxtWave"],
     language: ["JavaScript", "HTML", "CSS"],
     category: "Course",
-    completionYear: 2021
+    completionYear: "March 2024",
   },
   {
     name: "Full-Stack Web Developer",

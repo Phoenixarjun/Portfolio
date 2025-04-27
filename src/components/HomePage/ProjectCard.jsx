@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import AmazonPrimeClone from '/images/AmazonPrimeClone.png'
-import WebDevelopment from '/logo/WebDevelopment.jpg'
+import WebDevelopment from '/logo/webDevelopment.png'
+
 const ProjectCard = ( {title , shortDescription, projectId} ) => {
+  console.log(projectId)
   return (
-    <div className='w-72 h-full relative shadow-xl rounded-2xl'>
+    <div className='w-72 h-[43vh] relative shadow-xl rounded-2xl'>
       <div className='w-20 rounded-full absolute top-20 translate-x-28 translate-y-4'>
         <img src={WebDevelopment} alt="WebDev" width={70} className='rounded-full border-4 border-secondary'/>
       </div>

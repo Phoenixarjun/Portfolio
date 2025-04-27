@@ -1,24 +1,26 @@
 const projects = [
   {
     id: 1,
-    name: "Amazon Prime Clone",
-    description: "This project is a comprehensive clone of Amazon Prime, aiming to replicate its core functionalities such as streaming videos, user authentication, and personalized recommendations. It showcases advanced web development techniques and provides a real-world scenario for practicing full-stack development.",
-    shortDescription: "A comprehensive clone of Amazon Prime with streaming and user authentication.",
-    linkToTheSite: "https://www.primevideo.com",
-    cardImg: "./images/AmazonPrimeClone.png",
-    image: "./images/AmazonPrimeCover.svg",
+    name: "Rearticle",
+    "description": "During my internship, I developed Rearticle, a No-code LaTeX typesetting platform that simplifies academic writing. It helps researchers manage equations, references, and content without complex LaTeX code, ensuring papers meet journal standards. Working with the Genik team, I gained hands-on experience in ReactJS, Tailwind CSS, Firebase, Radix UI, and Bitbucket, enhancing both frontend and backend development skills.",
+    shortDescription: "A No-code LaTeX typesetting platform designed to simplify academic writing, developed using ReactJS, Tailwind CSS, Firebase, and Bitbucket.",
+    linkToTheSite: "https://www.rearticle.io/",  
+    cardImg: "./images/Rearticle.png",          
+    image: "./images/RearticleCover.svg",      
     technology: [
-      { techIcon: "/logo/html.svg", techName: "HTML", techDescription: "HTML is the standard markup language for creating web pages. It is the backbone of all web content, allowing for the structuring and presentation of text, images, and interactive elements." },
-      { techIcon: "/logo/css.svg", techName: "CSS", techDescription: "CSS is a style sheet language used for describing the presentation of a document written in HTML. It enhances the visual appearance and layout of web pages." },
-      { techIcon: "/logo/javascript.svg", techName: "JavaScript", techDescription: "JavaScript is a programming language that enables interactive web pages. It is a core technology of the web, allowing for dynamic content and interactive user interfaces." }
+      { techIcon: "/logo/react.png", "techName": "ReactJS", "techDescription": "ReactJS is a popular JavaScript library for building user interfaces, known for its component-based architecture and efficient rendering." },
+      { techIcon: "/logo/tailwindcss.svg", "techName": "Tailwind CSS", "techDescription": "Tailwind CSS is a utility-first CSS framework for rapidly building custom designs without leaving your HTML." },
+      { techIcon: "/logo/firebase.png", "techName": "Firebase", "techDescription": "Firebase is a platform developed by Google for creating mobile and web applications, providing a variety of tools and services to help you develop high-quality apps." },
+      { techIcon: "/logo/radixui.svg", "techName": "Radix UI", "techDescription": "Radix UI provides accessible, high-quality UI components to help you build robust web applications quickly." },
+      { techIcon: "/logo/bitbucket.png", "techName": "Bitbucket", "techDescription": "Bitbucket is a Git repository management solution designed for professional teams, offering distributed version control, collaborative features, and more." }
     ],
     objectives: [
-      { name: "Practice" },
+      { name: "Internship" },
       { name: "Practical Implementation" }
     ],
-    domains: ["Web Development"],
+    domains: ["Full Stack Web Development"],
     collaboration: "Team"
-  },
+},
   {
     id: 2,
     name: "Weather Dashboard",
@@ -81,10 +83,10 @@ const projects = [
   },
   {
     id: 5,
-    name: "Social Media App",
-    description: "A social media application that enables users to connect with friends, share updates, photos, and videos, and engage with content through likes and comments. The app aims to provide a platform for social interaction and content sharing.",
-    shortDescription: "Connect with friends and share updates, photos, and videos.",
-    linkToTheSite: "https://www.socialmediaapp.com",
+    name: "Amazon Prime Frontend Clone",
+    description: "To enhance my skills in HTML, CSS, and JavaScript, I developed an Amazon Prime frontend clone. This project allowed me to apply my knowledge in responsive design, creating a visually appealing and functional web application that mirrors the user experience of the original Amazon Prime interface. By focusing on modern web technologies, I aimed to deepen my understanding of frontend development and responsive web design.",
+    shortDescription: "A responsive Amazon Prime clone built with HTML, CSS, and JavaScript.",
+    linkToTheSite: "https://phoenixarjun.github.io/Amazon-Prime/",
     cardImg: "./images/AmazonPrimeClone.png",
     image: "./images/AmazonPrimeCover.svg",
     technology: [
@@ -93,12 +95,13 @@ const projects = [
       { techIcon: "/logo/javascript.svg", techName: "JavaScript", techDescription: "JavaScript is a programming language that enables interactive web pages. It is a core technology of the web, allowing for dynamic content and interactive user interfaces." }
     ],
     objectives: [
-      { name: "Social Interaction" },
-      { name: "Content Sharing" }
+      { name: "Enhance Frontend Skills" },
+      { name: "Apply Responsive Design Principles" },
+      { name: "Gain Practical Experience in Web Development" }
     ],
     domains: ["Web Development"],
-    collaboration: "Team"
-  },
+    collaboration: "Solo"
+  },  
   {
     id: 6,
     name: "Personal Blog",

@@ -7,7 +7,7 @@ const ObjectivesBox = ({ objectives }) => {
     <div className='flex flex-col w-96 gap-3 bg-white border border-1 border-black'>
       <div  className='text-center px-5 py-3 bg-tertiary flex gap-2 items-center justify-center text-white'>
       <FontAwesomeIcon icon={faBullseye} />
-        <h1 className='font-bold'>OBJECTIVES</h1>
+        <h1 className='text-primary text-lg underline font-bold'>OBJECTIVES</h1>
       </div>
       <div className='flex flex-col gap-2 p-8'>
         {objectives.map((obj, index) => (

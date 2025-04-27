@@ -100,7 +100,7 @@ const AllProjectLayout = () => {
 
   return (
     <div>
-      <div className='flex flex-col items-center justify-center mt-10 bg-[url("/images/QuoteWallpaper2.jpg")] font-serif bg-cover bg-center h-64 p-10'>
+      <div className='flex flex-col items-center justify-center  bg-[url("/images/QuoteWallpaper2.jpg")] font-serif bg-cover bg-center h-64 p-10'>
         <h1 className='text-primary text-center mb-4 text-lg md:text-xl lg:text-2xl px-5 md:px-20 lg:px-40'>
           PROJECTS
         </h1>
@@ -123,6 +123,7 @@ const AllProjectLayout = () => {
           filteredProjects.map((item, index) => (
             <ProjectCard 
               key={index} 
+              projectId={item.id}
               title={item.name}
               shortDescription={item.shortDescription}
               cardImg={item.cardImg}
