@@ -2,16 +2,18 @@ import React from 'react'
 import TitleCard from '../components/ProjectsPage/TitleCard'
 import TechnologyTabs from '../components/ProjectsPage/TechnologyTabs'
 import ObjectivesBox from '../components/ProjectsPage/ObjectivesBox'
+import Screanshots from '../components/ProjectsPage/Screanshots'
 
 
 const ProjectLayout = ({ project }) => {
   return (
-    <div className='relative flex flex-col gap-5'>
+    <div className='relative flex flex-col gap-20'>
       <div>
         <TitleCard
           title={project.name} 
           description={project.description}
-          cardImg ={project.cardImg}
+          image ={project.image}
+          link={project.linkToTheSite}
         />
       </div>
       <div>
@@ -19,11 +21,12 @@ const ProjectLayout = ({ project }) => {
           technologies={project.technology}
         />
       </div>
-      <div className='absolute bottom-0 right-5 top-1/2 -translate-y-6'>
+      <div className='absolute right-5 top-96 -translate-y-12'>
         <ObjectivesBox 
           objectives={project.objectives}
         />
       </div>
+      <Screanshots screenshots={project.screanshots} />
     </div>
   )
 }

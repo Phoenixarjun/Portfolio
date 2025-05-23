@@ -18,7 +18,7 @@ const ProjectPage = () => {
       <Navbar />
       <ProjectLayout project={project} />
       <Footer 
-      status={1}
+      status={0}
       name = "Naresh B A"
       />
     </>

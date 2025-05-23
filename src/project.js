@@ -1,46 +1,72 @@
 const projects = [
+{
+  "id": 1,
+  "name": "Fitsync",
+  "description": "During my gym sessions, I struggled to track calories, attendance, and maintain a personalized diet plan, which led to fatigue and lost motivation. To solve this, I built Fitsync—a full-stack, generative AI-powered web app that tracks gym attendance, calories burned by cardio and weight training, and creates specialized diet plans based on user preferences. It features interactive charts for progress visualization and a personalized AI chatbot that answers health and fitness questions from curated documentation. Fitsync is a dynamic, responsive tool designed to keep fitness enthusiasts motivated and organized.",
+  "shortDescription": "A generative AI-powered fitness tracker offering personalized workout, diet plans, and progress insights.",
+  "linkToTheSite": "https://fit-sync-sepia.vercel.app/",
+  "cardImg": "/images/Projects/Fitsync/HomePage.png",
+  "image": "/images/Projects/Fitsync/CoverPage.png",
+  "technology": [
+    { "techIcon": "/logo/WebDevelopment/nextjs.svg", "techName": "Next.js", "techDescription": "Next.js is a React framework enabling server-side rendering and static site generation for fast, scalable web apps." },
+    { "techIcon": "/logo/WebDevelopment/radixui.svg", "techName": "Radix UI", "techDescription": "Radix UI provides accessible, unstyled components for building high-quality web interfaces quickly." },
+    { "techIcon": "/logo/WebDevelopment/tailwindcss.svg", "techName": "Tailwind CSS", "techDescription": "Tailwind CSS is a utility-first CSS framework for rapid custom styling directly in HTML." },
+    { "techIcon": "/logo/WebDevelopment/MongoDB.png", "techName": "MongoDB", "techDescription": "MongoDB is a scalable NoSQL database storing flexible JSON-like documents." },
+    { "techIcon": "/logo/WebDevelopment/NodeJs.png", "techName": "Node.js", "techDescription": "Node.js enables backend JavaScript runtime for scalable server-side applications." },
+    { "techIcon": "/logo/AI/Pinecone.png", "techName": "Pinecone", "techDescription": "Pinecone is a vector database for efficient similarity search and AI-powered data retrieval." },
+    { "techIcon": "/logo/AI/Langchain.svg", "techName": "LangChain", "techDescription": "LangChain facilitates building LLM-powered applications with data chaining and retrieval." },
+    { "techIcon": "/logo/AI/gemini.png", "techName": "Gemini", "techDescription": "Gemini provides advanced AI models enabling intelligent content generation and interaction." },
+    { "techIcon": "/logo/WebDevelopment/Git.png", "techName": "Git", "techDescription": "Git is a distributed version control system for collaborative software development." }
+  ],
+  "objectives": [
+    { "name": "Self-Motivation" },
+    { "name": "Gym Progress Tracking" },
+    { "name": "Personalized Fitness & Diet Planning" },
+    { "name": "Generative AI Chatbot Integration" }
+  ],
+  "domains": ["Full Stack Web Development", "Generative AI"],
+  "domainImg" : "/logo/webDevelopment.png",
+  "collaboration": "Individual",
+  screanshots: [
+  { "img": "/images/Projects/Fitsync/HomePage.png", "title": "Personalized Fitness Dashboard" },
+  { "img": "/images/Projects/Fitsync/Progress.png", "title": "Workout & Progress Analytics" },
+  { "img": "/images/Projects/Fitsync/Workout.png", "title": "Cardio & Strength Tracker" },
+  { "img": "/images/Projects/Fitsync/Diet.png", "title": "AI-Powered Diet Planner" }
+]
+},
   {
-    id: 1,
+    id: 2,
     name: "Rearticle",
     "description": "During my internship, I developed Rearticle, a No-code LaTeX typesetting platform that simplifies academic writing. It helps researchers manage equations, references, and content without complex LaTeX code, ensuring papers meet journal standards. Working with the Genik team, I gained hands-on experience in ReactJS, Tailwind CSS, Firebase, Radix UI, and Bitbucket, enhancing both frontend and backend development skills.",
     shortDescription: "A No-code LaTeX typesetting platform designed to simplify academic writing, developed using ReactJS, Tailwind CSS, Firebase, and Bitbucket.",
     linkToTheSite: "https://www.rearticle.io/",  
-    cardImg: "./images/Rearticle.png",          
-    image: "./images/RearticleCover.svg",      
+    cardImg: "/images/Projects/Rearticle/LandingPage.png",          
+    image: "/images/Projects/Rearticle/RearticleCover.svg",      
     technology: [
-      { techIcon: "/logo/react.png", "techName": "ReactJS", "techDescription": "ReactJS is a popular JavaScript library for building user interfaces, known for its component-based architecture and efficient rendering." },
-      { techIcon: "/logo/tailwindcss.svg", "techName": "Tailwind CSS", "techDescription": "Tailwind CSS is a utility-first CSS framework for rapidly building custom designs without leaving your HTML." },
-      { techIcon: "/logo/firebase.png", "techName": "Firebase", "techDescription": "Firebase is a platform developed by Google for creating mobile and web applications, providing a variety of tools and services to help you develop high-quality apps." },
-      { techIcon: "/logo/radixui.svg", "techName": "Radix UI", "techDescription": "Radix UI provides accessible, high-quality UI components to help you build robust web applications quickly." },
+      { techIcon: "/logo/WebDevelopment/react.png", "techName": "ReactJS", "techDescription": "ReactJS is a popular JavaScript library for building user interfaces, known for its component-based architecture and efficient rendering." },
+      { techIcon: "/logo/WebDevelopment/tailwindcss.svg", "techName": "Tailwind CSS", "techDescription": "Tailwind CSS is a utility-first CSS framework for rapidly building custom designs without leaving your HTML." },
+      { techIcon: "/logo/WebDevelopment/firebase.png", "techName": "Firebase", "techDescription": "Firebase is a platform developed by Google for creating mobile and web applications, providing a variety of tools and services to help you develop high-quality apps." },
+      { techIcon: "/logo/WebDevelopment/radixui.svg", "techName": "Radix UI", "techDescription": "Radix UI provides accessible, high-quality UI components to help you build robust web applications quickly." },
       { techIcon: "/logo/bitbucket.png", "techName": "Bitbucket", "techDescription": "Bitbucket is a Git repository management solution designed for professional teams, offering distributed version control, collaborative features, and more." }
     ],
-    objectives: [
-      { name: "Internship" },
-      { name: "Practical Implementation" }
-    ],
+objectives: [
+  { name: "Internship" },
+  { name: "Practical Implementation" },
+  { name: "AI-Powered LaTeX Automation" },
+  { name: "Create/Convert Docs Without LaTeX" },
+  { name: "Boost Productivity via ReMath & ReSite" }
+]
+
+,
     domains: ["Full Stack Web Development"],
-    collaboration: "Team"
+    collaboration: "Team",
+    screanshots: [
+      { img: "/images/Projects/Rearticle/LandingPage.png", title: "Landing Page" },
+      { img: "/images/Projects/Rearticle/Dashboard.png", title: "Dashboard" },
+      { img: "/images/Projects/Rearticle/Editor.png", title: "Document Editor" },
+      { img: "/images/Projects/Rearticle/Account.png", title: "Account" }
+    ]
 },
-  {
-    id: 2,
-    name: "Weather Dashboard",
-    description: "A weather dashboard application that provides real-time weather updates and forecasts. Users can search for the current weather conditions and future forecasts of any city globally. The app integrates with a weather API to fetch data and displays it in a user-friendly interface.",
-    shortDescription: "Real-time weather updates and forecasts for any city globally.",
-    linkToTheSite: "https://www.weatherdashboard.com",
-    cardImg: "./images/AmazonPrimeClone.png",
-    image: "./images/AmazonPrimeCover.svg",
-    technology: [
-      { techIcon: "/logo/html.svg", techName: "HTML", techDescription: "HTML is the standard markup language for creating web pages. It is the backbone of all web content, allowing for the structuring and presentation of text, images, and interactive elements." },
-      { techIcon: "/logo/css.svg", techName: "CSS", techDescription: "CSS is a style sheet language used for describing the presentation of a document written in HTML. It enhances the visual appearance and layout of web pages." },
-      { techIcon: "/logo/javascript.svg", techName: "JavaScript", techDescription: "JavaScript is a programming language that enables interactive web pages. It is a core technology of the web, allowing for dynamic content and interactive user interfaces." }
-    ],
-    objectives: [
-      { name: "Weather Tracking" },
-      { name: "User Interface Design" }
-    ],
-    domains: ["Web Development", "Data Science"],
-    collaboration: "Solo"
-  },
   {
     id: 3,
     name: "Fitness Tracker",
@@ -59,7 +85,13 @@ const projects = [
       { name: "Activity Tracking" }
     ],
     domains: ["Web Development"],
-    collaboration: "Team"
+    collaboration: "Team",
+    screanshots: [
+      { img: "./images/AmazonPrimeCover.png", description: "Rearticle homepage showcasing the LaTeX typesetting interface." },
+      { img: "./images/AmazonPrimeCover.png", description: "User-friendly dashboard for managing academic papers." },
+      { img: "./images/AmazonPrimeCover.png", description: "Interactive editor for real-time LaTeX rendering." },
+      { img: "./images/AmazonPrimeCover.png", description: "Collaboration features for team-based research projects." }
+    ]
   },
   {
     id: 4,

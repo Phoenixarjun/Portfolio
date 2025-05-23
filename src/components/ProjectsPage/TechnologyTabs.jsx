@@ -4,7 +4,8 @@ import TechnologyBox from '../General/TechnologyBox'
 import TechnologyContent from '../General/TechnologyContent'
 const TechnologyTabs = ({technologies}) => {
   return (
-    <div className='p-6 h-[40vh] flex flex-col justify-center text-black'>
+    <div className='p-6 flex flex-col gap-5 justify-center text-black'>
+      <h1 className='text-3xl font-bold pl-3'>Tech Stack</h1>
       <Tabs.Root defaultValue="react" className='flex flex-col gap-5'>
         <Tabs.List className='flex gap-4'>
           {technologies.map((tech, index) => (
