@@ -16,14 +16,14 @@ const ProjectLayout = ({ project }) => {
           link={project.linkToTheSite}
         />
       </div>
-      <div>
-        <TechnologyTabs 
-          technologies={project.technology}
-        />
-      </div>
-      <div className='absolute right-5 top-96 -translate-y-12'>
+      <div className='flex items-center justify-center md:absolute right-5 top-96 -translate-y-12'>
         <ObjectivesBox 
           objectives={project.objectives}
+        />
+      </div>
+      <div className='w-full md:w-3/4'>
+        <TechnologyTabs 
+          technologies={project.technology}
         />
       </div>
       <Screanshots screenshots={project.screanshots} />

@@ -2,7 +2,7 @@ const certifications = [
   {
     name: "Build Your Own Dynamic Web Application",
     description: "Certified in dynamic web application development, covering foundational JavaScript to advanced full-stack techniques, with hands-on project experience.",
-    logo: "./logo/Nxtwave.png",
+    logo: "./logo/Nxtwave.svg",
     certificateImg: "./images/jsCertificate.png",
     credentialLink: "https://certificates.ccbp.in/academy/static-website?id=JZBGHEBOGG",
     platforms: ["NxtWave"],
@@ -11,12 +11,12 @@ const certifications = [
     completionYear: "March 2024",
   },
   {
-    name: "Full-Stack Web Developer",
-    description: "Recognized for proficiency in front-end and back-end development, including HTML, CSS, JavaScript, and server-side technologies.",
-    logo: "./logo/Nxtwave.png",
-    certificateImg: "./images/fullStackCertificate.png",
-    credentialLink: "https://certificates.ccbp.in/academy/static-website?id=JZBGHEBOGG",
-    platforms: ["edX", "Udacity"],
+    name: "Generative AI Fundamentals",
+    description: "Certified in Generative AI Fundamentals, covering AI, Machine Learning, Deep Learning, and Data Science basics with insights into generative models.",
+    logo: "./logo/Prodapt-logo.jpg",
+    certificateImg: "./images/Certifications/GenerativeAI-Prodapt.webp",
+    credentialLink: "",
+    platforms: ["edX"],
     language: ["JavaScript", "HTML", "CSS", "Python"],
     category: "Course",
     completionYear: 2022

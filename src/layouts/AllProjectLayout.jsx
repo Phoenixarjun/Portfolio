@@ -116,6 +116,7 @@ const AllProjectLayout = () => {
           domains={domains}
           technologies={technologies}
           collaborations={collaborations}
+          name ='Projects'
         />
       </div>
       <div className='flex flex-wrap items-center justify-center gap-8 mt-10'>

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import SearchBar from '../components/General/SearchBar';
 import SelectBox from '../components/General/SelectBox';
 
-const FilterLayout = ({ onFilterChange, domains, technologies, collaborations, types, platforms, languages }) => {
+const FilterLayout = ({ onFilterChange, domains, technologies, collaborations, types, platforms, languages, name }) => {
   const [selectedType, setSelectedType] = useState('All');
   const [selectedPlatform, setSelectedPlatform] = useState('All');
   const [selectedLanguage, setSelectedLanguage] = useState('All');
@@ -48,7 +48,7 @@ const FilterLayout = ({ onFilterChange, domains, technologies, collaborations, t
 
   return (
     <div className='mt-10 flex items-end justify-center gap-4'>
-      <SearchBar onSearchChange={handleSearchChange} />
+      <SearchBar onSearchChange={handleSearchChange} name={name} />
       {types ? (
         <>
           <SelectContainer title='Types' options={types} onChange={handleTypeChange} />

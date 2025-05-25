@@ -135,6 +135,7 @@ const CertificationLayout = () => {
           types={types}
           platforms={platforms}
           languages={languages}
+          name ='Certifications'
         />
       </div>
       <div className='flex flex-col gap-8 mt-10'>
