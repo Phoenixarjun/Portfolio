@@ -6,7 +6,7 @@ import Footer from '../components/General/Footer'
 const CertificationPage = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar isToggle={false}/>
       <CertificationLayout />
       <Footer />
     </div>

@@ -15,7 +15,7 @@ const ProjectPage = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar isToggle={false}/>
       <ProjectLayout project={project} />
       <Footer 
       status={0}

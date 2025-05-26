@@ -6,7 +6,7 @@ import Footer from '../components/General/Footer'
 const AllProjectPage = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar isToggle={false}/>
       <AllProjectLayout />
       <Footer />
     </div>

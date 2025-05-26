@@ -1,5 +1,3 @@
-// FilterLayout.js
-
 import React, { useState } from 'react';
 import SearchBar from '../components/General/SearchBar';
 import SelectBox from '../components/General/SelectBox';

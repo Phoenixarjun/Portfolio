@@ -10,7 +10,18 @@ const CertificationLayout = () => {
   const [platformCount, setPlatformCount] = useState(0);
   const [specializationCount, setSpecializationCount] = useState(0);
   const [internCount, setInternCount] = useState(0);
-  const [filteredCertifications, setFilteredCertifications] = useState(certifications);
+  const [filteredCertifications, setFilteredCertifications] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [certificatesPerPage] = useState(5);
+
+  const sortCertifications = (certs) => {
+    return [...certs].sort((a, b) => {
+      const dateA = new Date(a.completionYear);
+      const dateB = new Date(b.completionYear);
+      if (dateB - dateA !== 0) return dateB - dateA;
+      return a.name.localeCompare(b.name);
+    });
+  };
 
   const extractUniqueValues = (key) => {
     const uniqueValues = new Set();
@@ -30,17 +41,11 @@ const CertificationLayout = () => {
 
   useEffect(() => {
     const countCourses = () => {
-      let count = 0;
-      certifications.forEach(cert => {
-        if (cert.category === 'Course') {
-          count++;
-        }
-      });
-      return count;
+      return certifications.filter(cert => cert.category === 'Course').length;
     };
 
     const countPlatforms = () => {
-      let platformSet = new Set();
+      const platformSet = new Set();
       certifications.forEach(cert => {
         cert.platforms.forEach(platform => platformSet.add(platform));
       });
@@ -48,22 +53,18 @@ const CertificationLayout = () => {
     };
 
     const countSpecializations = () => {
-      return 5; 
+      return 5; // placeholder or dynamic logic
     };
 
     const countInternships = () => {
-      let count = 0;
-      certifications.forEach(cert => {
-        if (cert.category === 'Intern') {
-          count++;
-        }
-      });
-      return count;
+      return certifications.filter(cert =>
+        cert.category === 'Internship' || cert.category === 'Intern'
+      ).length;
     };
 
     const animateCount = (end, setter) => {
       let start = 0;
-      const duration = 1000; 
+      const duration = 1000;
       const increment = end / (duration / 10);
 
       const timer = setInterval(() => {
@@ -83,7 +84,24 @@ const CertificationLayout = () => {
     animateCount(countPlatforms(), setPlatformCount);
     animateCount(countSpecializations(), setSpecializationCount);
     animateCount(countInternships(), setInternCount);
+
+    setFilteredCertifications(sortCertifications(certifications));
   }, []);
+
+  const matchesSearch = (cert, query) => {
+    const normalizedQuery = query.toLowerCase();
+
+    const checkValue = (value) => {
+      if (typeof value === 'string') return value.toLowerCase().includes(normalizedQuery);
+      if (Array.isArray(value)) return value.some(item => checkValue(item));
+      if (typeof value === 'object' && value !== null) {
+        return Object.values(value).some(val => checkValue(val));
+      }
+      return false;
+    };
+
+    return Object.values(cert).some(val => checkValue(val));
+  };
 
   const handleFilterChange = (filters) => {
     const { type, platform, language, search } = filters;
@@ -91,62 +109,102 @@ const CertificationLayout = () => {
       const matchesType = type === 'All' || cert.category.toLowerCase() === type.toLowerCase();
       const matchesPlatform = platform === 'All' || cert.platforms.some(p => p.toLowerCase() === platform.toLowerCase());
       const matchesLanguage = language === 'All' || cert.language.some(l => l.toLowerCase() === language.toLowerCase());
-      const matchesSearch = search === '' || cert.name.toLowerCase().includes(search.toLowerCase()) || cert.description.toLowerCase().includes(search.toLowerCase()) || cert.language.some(l => l.toLowerCase().includes(search.toLowerCase()));
+      const matchesSearchInput = search === '' || matchesSearch(cert, search);
 
-      return matchesType && matchesPlatform && matchesLanguage && matchesSearch;
+      return matchesType && matchesPlatform && matchesLanguage && matchesSearchInput;
     });
-    setFilteredCertifications(filtered);
+
+    setFilteredCertifications(sortCertifications(filtered));
+    setCurrentPage(1);
   };
 
+  const indexOfLastCert = currentPage * certificatesPerPage;
+  const indexOfFirstCert = indexOfLastCert - certificatesPerPage;
+  const currentCerts = filteredCertifications.slice(indexOfFirstCert, indexOfLastCert);
+  const totalPages = Math.ceil(filteredCertifications.length / certificatesPerPage);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   const labels = [
-    {
-      name: "Courses",
-      count: courseCount,
-    },
-    {
-      name: "Platforms",
-      count: platformCount,
-    },
-    {
-      name: "Specializations",
-      count: specializationCount, 
-    },
-    {
-      name: "Internships",
-      count: internCount,
-    }
+    { name: "Courses", count: courseCount },
+    { name: "Platforms", count: platformCount },
+    { name: "Specializations", count: specializationCount },
+    { name: "Internships", count: internCount }
   ];
 
   return (
     <div>
-      <div className='flex flex-col items-center justify-center mt-10 bg-[url("/images/QuoteWallpaper2.jpg")] font-serif bg-cover bg-center h-64 p-10'>
+      <div className='flex flex-col items-center justify-center bg-[url("/images/QuoteWallpaper2.jpg")] font-serif bg-cover bg-center h-64 p-10'>
         <h1 className='text-primary text-center mb-4 text-lg md:text-xl lg:text-2xl px-5 md:px-20 lg:px-40'>
           CERTIFICATIONS
         </h1>
       </div>
+
       <div className='flex items-center justify-around mt-10'>
         {labels.map((label, index) => (
           <CountCard key={index} label={label.name} count={label.count} />
         ))}
       </div>
+
       <div>
         <FilterLayout
           onFilterChange={handleFilterChange}
           types={types}
           platforms={platforms}
           languages={languages}
-          name ='Certifications'
+          name='Certifications'
         />
       </div>
+
       <div className='flex flex-col gap-8 mt-10'>
-        {filteredCertifications.length > 0 ? (
-          filteredCertifications.map((certification, index) => (
+        {currentCerts.length > 0 ? (
+          currentCerts.map((certification, index) => (
             <CertificateCard key={index} certification={certification} />
           ))
         ) : (
           <NoResultFound />
         )}
       </div>
+
+      {filteredCertifications.length > certificatesPerPage && (
+        <div className="flex justify-center mt-8 mb-12">
+          <nav className="inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+            <button
+              onClick={() => paginate(Math.max(1, currentPage - 1))}
+              disabled={currentPage === 1}
+              className={`relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium ${
+                currentPage === 1 ? 'text-gray-300 cursor-not-allowed' : 'text-gray-700 hover:bg-gray-50'
+              }`}
+            >
+              Previous
+            </button>
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((number) => (
+              <button
+                key={number}
+                onClick={() => paginate(number)}
+                className={`relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium ${
+                  currentPage === number
+                    ? 'bg-blue-500 text-white'
+                    : 'bg-white text-gray-700 hover:bg-gray-50'
+                }`}
+              >
+                {number}
+              </button>
+            ))}
+
+            <button
+              onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
+              disabled={currentPage === totalPages}
+              className={`relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium ${
+                currentPage === totalPages ? 'text-gray-300 cursor-not-allowed' : 'text-gray-700 hover:bg-gray-50'
+              }`}
+            >
+              Next
+            </button>
+          </nav>
+        </div>
+      )}
     </div>
   );
 };

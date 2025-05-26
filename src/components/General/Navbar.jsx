@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ toggleOpen, handleToggle, isToggle }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -46,7 +46,7 @@ const Navbar = () => {
           <NavList key={index} name={label.name} link={label.link} pageLink={label.pageLink} />
         ))}
       </ul>
-
+      {isToggle && <ToggleButton toggleOpen={toggleOpen} handleToggle={handleToggle} />}
       <div className='absolute top-3 right-3 md:hidden' onClick={handleOpen}>
         <svg className={`ham hamRotate ham7 w-8 cursor-pointer ${open ? 'active' : ''}`} viewBox="0 0 100 100">
           <path
@@ -64,7 +64,6 @@ const Navbar = () => {
   );
 }
 
-
 const NavList = ({ name, link, pageLink }) => {
   return(
     <Link to={`${pageLink}`}>
@@ -72,6 +71,43 @@ const NavList = ({ name, link, pageLink }) => {
         <a href={`${link}`}>{name}</a>
       </li>
     </Link>
+  )
+}
+
+const ToggleButton = ({ toggleOpen, handleToggle }) => {
+  return (
+    <label
+      className="hidden cursor-pointer relative h-[1.5em] w-[3em] rounded-full bg-[hsl(0,0%,7%)] shadow-[0px_2px_4px_0px_rgb(18,18,18,0.25),0px_4px_8px_0px_rgb(18,18,18,0.35)] md:block"
+    >
+      <span
+        className="absolute inset-[0.05em] rounded-full border-[1px] border-[hsl(0,0%,25%)]"
+      ></span>
+      <div
+        className="absolute left-[0.25em] top-1/2 flex h-[1.1em] w-[1.1em] -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-[inset_0px_2px_2px_0px_hsl(0,0%,85%)]"
+      >
+        <div
+          className="h-[0.75em] w-[0.75em] rounded-full bg-[hsl(0,0%,7%)] shadow-[0px_2px_2px_0px_hsl(0,0%,85%)]"
+        ></div>
+      </div>
+      <div
+        className="absolute right-[0.25em] top-1/2 h-[0.125em] w-[0.75em] -translate-y-1/2 rounded-full bg-[hsl(0,0%,50%)] shadow-[inset_0px_2px_1px_0px_hsl(0,0%,40%)]"
+      ></div>
+      <input 
+        className="peer h-[0.5em] w-[0.5em] opacity-0" 
+        type="checkbox" 
+        checked={toggleOpen}
+        onChange={handleToggle}
+      />
+      <span
+        className={`absolute top-1/2 flex h-[1.25em] w-[1.25em] -translate-y-1/2 items-center justify-center rounded-full bg-[rgb(26,26,26)] shadow-[inset_2px_2px_2px_0px_rgba(64,64,64,0.25),inset_-2px_-2px_2px_0px_rgba(16,16,16,0.5)] transition-all duration-300 ${toggleOpen ? 'left-[calc(100%-1.375em)]' : 'left-[0.125em]'}`}
+      >
+        <span className="relative h-full w-full rounded-full">
+          <span
+            className="absolute inset-[0.05em] rounded-full border-[1px] border-[hsl(0,0%,50%)]"
+          ></span>
+        </span>
+      </span>
+    </label>
   )
 }
 
