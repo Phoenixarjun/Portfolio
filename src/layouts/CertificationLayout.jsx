@@ -4,6 +4,7 @@ import certifications from '../certification';
 import CertificateCard from '../components/General/CertificateCard';
 import FilterLayout from './FilterLayout';
 import NoResultFound from '../components/General/NoResultFound';
+import Pagination from '../components/General/Pagination';
 
 const CertificationLayout = () => {
   const [courseCount, setCourseCount] = useState(0);
@@ -140,7 +141,7 @@ const CertificationLayout = () => {
         </h1>
       </div>
 
-      <div className='flex items-center justify-around mt-10'>
+      <div className='flex items-center justify-around mt-10 flex-wrap gap-4 p-5'>
         {labels.map((label, index) => (
           <CountCard key={index} label={label.name} count={label.count} />
         ))}
@@ -167,42 +168,12 @@ const CertificationLayout = () => {
       </div>
 
       {filteredCertifications.length > certificatesPerPage && (
-        <div className="flex justify-center mt-8 mb-12">
-          <nav className="inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
-            <button
-              onClick={() => paginate(Math.max(1, currentPage - 1))}
-              disabled={currentPage === 1}
-              className={`relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium ${
-                currentPage === 1 ? 'text-gray-300 cursor-not-allowed' : 'text-gray-700 hover:bg-gray-50'
-              }`}
-            >
-              Previous
-            </button>
-
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((number) => (
-              <button
-                key={number}
-                onClick={() => paginate(number)}
-                className={`relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium ${
-                  currentPage === number
-                    ? 'bg-blue-500 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-50'
-                }`}
-              >
-                {number}
-              </button>
-            ))}
-
-            <button
-              onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
-              disabled={currentPage === totalPages}
-              className={`relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium ${
-                currentPage === totalPages ? 'text-gray-300 cursor-not-allowed' : 'text-gray-700 hover:bg-gray-50'
-              }`}
-            >
-              Next
-            </button>
-          </nav>
+        <div className="flex justify-center mt-8 mb-12 p-5">
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            paginate={paginate}
+          />
         </div>
       )}
     </div>

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Navbar from "../components/General/Navbar";
+import SkillSection from "../layouts/ModernHomePage/SkillSection";
+import EAndESection from "../layouts/ModernHomePage/EAndESection";
 
 const ModernHomePage = ({ toggleOpen, handleToggle }) => {
   return (
@@ -9,6 +11,8 @@ const ModernHomePage = ({ toggleOpen, handleToggle }) => {
         <h1 className="text-4xl font-bold mb-4">Welcome to the Modern Home Page</h1>
         <p className="text-lg text-gray-700">This is a simple modern home page layout.</p>
       </div>
+      <EAndESection />
+      <SkillSection />
     </div>
   );
 };

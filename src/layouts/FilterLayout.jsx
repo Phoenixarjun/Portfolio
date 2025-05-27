@@ -45,7 +45,7 @@ const FilterLayout = ({ onFilterChange, domains, technologies, collaborations, t
   };
 
   return (
-    <div className='mt-10 flex items-end justify-center gap-4'>
+    <div className='mt-10 p-5 flex flex-col items-center justify-center gap-4 md:flex-row md:items-end'>
       <SearchBar onSearchChange={handleSearchChange} name={name} />
       {types ? (
         <>
