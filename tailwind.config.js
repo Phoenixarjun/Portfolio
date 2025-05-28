@@ -34,6 +34,7 @@ export default {
         'name' : ["Playfair Display", 'sans-serif'],
         'banner1' : ["Great Vibes", 'sans-serif'],
         'banner2' : ["Niconne", 'sans-serif'],
+        'josefin' : ["Josefin Sans", 'sans-serif'], 
       },
     },
   },

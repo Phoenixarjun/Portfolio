@@ -8,10 +8,11 @@
     --color-secondary: 66 66 66;
     font-family: 'Poppins', sans-serif;
   }
-  ::-moz-selection { 
+
+  ::-moz-selection {
     background: #00ADB5;
   }
-  
+
   ::selection {
     background: #00ADB5;
   }
@@ -73,3 +74,5 @@
 .ham7.active .bottom {
   stroke-dashoffset: -83px;
 }
+
+

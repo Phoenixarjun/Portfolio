@@ -261,7 +261,8 @@ const SkillSection = () => {
   return (
     <div 
       ref={containerRef}
-      className="w-full min-h-screen flex flex-col items-center justify-center px-4 py-10 relative bg-black"
+      className="text-white p-20 relative z-20 w-full min-h-screen flex flex-col items-center justify-center px-4 py-10  bg-black"
+
     >
       {shouldAnimateTitle ? (
         <BlurText
