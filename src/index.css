@@ -76,3 +76,59 @@
 }
 
 
+
+
+@layer components {
+  .glitch-text {
+    --glitch-duration: 0.5s;
+    --glitch-color-1: red;
+    --glitch-color-2: cyan;
+    position: relative;
+    display: inline-block;
+  }
+
+  .glitch-content {
+    position: relative;
+    display: inline-block;
+  }
+
+  .glitch-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: glitch-anim var(--glitch-duration) infinite linear alternate-reverse;
+  }
+
+  .glitch-layer--1 {
+    color: var(--glitch-color-1);
+    transform: translate(-2px, 2px);
+    animation-name: glitch-anim-1;
+  }
+
+  .glitch-layer--2 {
+    color: var(--glitch-color-2);
+    transform: translate(2px, -2px);
+    animation-name: glitch-anim-2;
+  }
+
+  @keyframes glitch-anim-1 {
+    0% { clip-path: inset(80% 0 10% 0); }
+    20% { clip-path: inset(10% 0 80% 0); }
+    40% { clip-path: inset(50% 0 30% 0); }
+    60% { clip-path: inset(20% 0 60% 0); }
+    80% { clip-path: inset(70% 0 10% 0); }
+    100% { clip-path: inset(10% 0 80% 0); }
+  }
+
+  @keyframes glitch-anim-2 {
+    0% { clip-path: inset(30% 0 60% 0); }
+    20% { clip-path: inset(60% 0 30% 0); }
+    40% { clip-path: inset(20% 0 70% 0); }
+    60% { clip-path: inset(70% 0 20% 0); }
+    80% { clip-path: inset(40% 0 50% 0); }
+    100% { clip-path: inset(60% 0 30% 0); }
+  }
+}

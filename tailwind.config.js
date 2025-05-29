@@ -3,6 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      animation: ['hover', 'focus'],
       backgroundImage: {
         'custom-gradient': 'linear-gradient(to left, black 40%, transparent 58%)',
       },
@@ -35,6 +36,9 @@ export default {
         'banner1' : ["Great Vibes", 'sans-serif'],
         'banner2' : ["Niconne", 'sans-serif'],
         'josefin' : ["Josefin Sans", 'sans-serif'], 
+      },
+      animation: {
+         'glitch': 'glitch-anim 1s infinite',
       },
     },
   },
