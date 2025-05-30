@@ -1,19 +1,19 @@
-import React, { useRef, useEffect } from "react";
-import TubeScrollExperience from "./TubeScrollExperience";
+import React, { useRef, useEffect, useState } from "react";
+import TubeScrollExperience from "./TubeScrollExperience"; // Ensure this path is correct
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import GlitchText from "../../components/General/GlitchText";
+import GlitchText from "../../components/General/GlitchText"; // Ensure this path is correct
 
 gsap.registerPlugin(ScrollTrigger);
 
 const HeadingComponent = ({ text, id }) => {
   const headingRef = useRef(null);
-  const sectionRef = useRef(null);
+  // const sectionRef = useRef(null); // sectionRef is not used in HeadingComponent
 
   useEffect(() => {
     if (!headingRef.current) return;
 
-    gsap.fromTo(headingRef.current, 
+    const animation = gsap.fromTo(headingRef.current,
       {
         scale: 0.8,
         opacity: 0,
@@ -39,15 +39,14 @@ const HeadingComponent = ({ text, id }) => {
     );
 
     return () => {
+      animation.kill(); // Kill the GSAP animation itself
       ScrollTrigger.getById(`${id}-heading`)?.kill();
     };
   }, [id]);
 
   return (
-    <div 
-      ref={sectionRef} 
-      className="relative h-screen w-full flex items-center justify-center overflow-hidden group"
-    >
+    // Removed sectionRef from here as it's not used within HeadingComponent's direct logic
+    <div className="relative h-screen w-full flex items-center justify-center overflow-hidden group">
       <div
         ref={headingRef}
         className="relative z-10"
@@ -76,11 +75,10 @@ const LayoutWrapper = ({ children, id }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    if (!layoutRef.current) return;
+    if (!layoutRef.current || !containerRef.current) return; // Check both refs
 
     const elements = layoutRef.current.querySelectorAll('.layout-element');
-    
-    // Set initial state
+
     gsap.set(elements, {
       opacity: 0,
       y: 50,
@@ -88,10 +86,9 @@ const LayoutWrapper = ({ children, id }) => {
       filter: "blur(4px)"
     });
 
-    // Create timeline for staggered animation
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: containerRef.current,
+        trigger: containerRef.current, // Use containerRef as the trigger
         start: "top 75%",
         end: "top 25%",
         scrub: 1,
@@ -111,12 +108,13 @@ const LayoutWrapper = ({ children, id }) => {
     });
 
     return () => {
+      tl.kill(); // Kill the timeline
       ScrollTrigger.getById(`layout-${id}`)?.kill();
     };
   }, [id]);
 
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className="relative"> {/* Attach containerRef here */}
       <div ref={layoutRef} className="layout-container">
         {children}
       </div>
@@ -124,7 +122,6 @@ const LayoutWrapper = ({ children, id }) => {
   );
 };
 
-// Keep all your layout components exactly as they were
 const layoutRight = ({
   number,
   title,
@@ -146,7 +143,7 @@ const layoutRight = ({
           </div>
         </div>
         <div className="row-start-2 col-start-2 flex items-start p-5">
-          <div className="text-white z-10 layout-element"> 
+          <div className="text-white z-10 layout-element">
             <h3 className="text-xl font-bold mb-2">{cardTitle}</h3>
             <h4 className="text-lg text-white/70 mb-4">{cardSubtitle}</h4>
             <p className="text-base text-white/80">{cardDetailedText}</p>
@@ -269,7 +266,36 @@ const layoutBottom = ({
   );
 };
 
+
 const EAndESection = () => {
+  const sectionRef = useRef(null); // Ref for the entire EAndESection container
+  const [isTubeActive, setIsTubeActive] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsTubeActive(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1, // Adjust this value: 0 (soon as 1px is visible) to 1 (100% visible)
+      }
+    );
+
+    const currentSectionRef = sectionRef.current;
+    if (currentSectionRef) {
+      observer.observe(currentSectionRef);
+    }
+
+    return () => {
+      if (currentSectionRef) {
+        observer.unobserve(currentSectionRef);
+      }
+      observer.disconnect();
+    };
+  }, []);
+
   const education = [
     {
       number: "01",
@@ -363,16 +389,14 @@ const EAndESection = () => {
   );
 
   return (
-    <div className="relative w-full">
-      <TubeScrollExperience />
+    <div ref={sectionRef} className="relative w-full">
+      <TubeScrollExperience isActive={isTubeActive} />
       
-      {/* Education Section */}
       <div className="relative z-10">
         <HeadingComponent text="Education" id="education" />
         <EducationContent />
       </div>
       
-      {/* Experience Section */}
       <div className="relative z-10">
         <HeadingComponent text="Experience" id="experience" />
         <ExperienceContent />

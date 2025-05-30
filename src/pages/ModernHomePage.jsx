@@ -15,7 +15,9 @@ const ModernHomePage = ({ toggleOpen, handleToggle }) => {
     <p className="text-lg text-gray-700">This is a simple modern home page layout.</p>
   </div>
 
-{toggleOpen &&  <MyServiceSection />}
+{toggleOpen &&  
+  <MyServiceSection />
+}
 
   <EAndESection />
       <SkillSection />

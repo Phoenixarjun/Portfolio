@@ -46,7 +46,7 @@ const Navbar = ({ toggleOpen, handleToggle, isToggle }) => {
           <NavList key={index} name={label.name} link={label.link} pageLink={label.pageLink} />
         ))}
       </ul>
-      {isToggle && <ToggleButton toggleOpen={toggleOpen} handleToggle={handleToggle} />}
+      {/* {isToggle && <ToggleButton toggleOpen={toggleOpen} handleToggle={handleToggle} />} */}
       <div className='absolute top-3 right-3 md:hidden' onClick={handleOpen}>
         <svg className={`ham hamRotate ham7 w-8 cursor-pointer ${open ? 'active' : ''}`} viewBox="0 0 100 100">
           <path
