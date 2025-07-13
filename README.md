@@ -45,7 +45,7 @@ npm run dev
 ## 👨‍💻 Developed By
 
 **Naresh B.A**
-Full Stack Developer | GenAI Explorer
+Full Stack Developer | AI/ML Explorer
 [LinkedIn](https://www.linkedin.com/in/naresh-b-a-1b5331243)
 
 ---
