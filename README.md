@@ -1,4 +1,4 @@
-# 🌐 Naresh B.A — Developer Portfolio
+# 🌐 Naresh B A — Developer Portfolio
 
 ![React](https://img.shields.io/badge/React.js-18-blue?logo=react)
 ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.3-teal?logo=tailwindcss)
