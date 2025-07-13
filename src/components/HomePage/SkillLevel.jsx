@@ -20,9 +20,9 @@ const SkillLevel = ({ name, color, level, shouldAnimate }) => {
   };
 
   return (
-    <div className='flex flex-col gap-2 w-2/5'>
+    <div className='flex flex-col gap-2 w-full md:w-2/5'>
       <div className='flex justify-between items-center'>
-        <h4 className='font-bold text-white'>{name}</h4>
+        <h4 className='font-bold text-black'>{name}</h4>
         {shouldAnimate && (
           <img 
             src={getEmoji(level)} 

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Chrono } from 'react-chrono';
 import * as Tabs from '@radix-ui/react-tabs';
+import { motion } from 'framer-motion';
 import LabelUnderLine from '../../components/General/LabelUnderLine';
 
 const EAndESection = () => {
-
   const education = [
     {
-      title: "2021 - 2025", 
+      title: "2021 - 2025",
       cardTitle: "Bachelor in Technology",
       cardSubtitle: "Sri Sairam Institute of Technology | Information Technology",
       cardDetailedText: [
@@ -17,7 +17,7 @@ const EAndESection = () => {
       ]
     },
     {
-      title: "2023 - Present", 
+      title: "2023 - Present",
       cardTitle: "CCBP 4.0 Academy",
       cardSubtitle: "Nxtwave Academy | Full Stack Development Program",
       cardDetailedText: [
@@ -27,7 +27,7 @@ const EAndESection = () => {
       ]
     },
     {
-      title: "2024 - Present", 
+      title: "2024 - Present",
       cardTitle: "CCBP 4.0 Academy",
       cardSubtitle: "Nxtwave Academy | Data Science and Machine Learning Program",
       cardDetailedText: [
@@ -37,7 +37,7 @@ const EAndESection = () => {
       ]
     }
   ];
-  
+
   const experience = [
     {
       title: "Feb 2024 - Apr 2024",
@@ -60,7 +60,7 @@ const EAndESection = () => {
       ]
     },
     {
-      title: "April 2025 - May 2025", 
+      title: "April 2025 - May 2025",
       cardTitle: "AI Intern",
       cardSubtitle: "Edunet Foundation | AI Developer",
       cardDetailedText: [
@@ -70,47 +70,49 @@ const EAndESection = () => {
       ]
     }
   ];
-  
 
   const customTheme = {
     primary: '#00ADB5',
     secondary: 'white',
-    cardBgColor: 'transparent',
-    cardForeColor: 'white',
-    titleColor: 'white',
+    cardBgColor: '#EEEEEE',
+    cardForeColor: 'black',
+    titleColor: '#00ADB5',
     titleColorActive: 'black',
-    timelineContentColor: 'black',
-    timelinePointBackground: 'white',
+    timelineContentColor: '#222831',
+    timelinePointBackground: 'red',
   };
 
   return (
-    <div className="w-full min-h-[150vh] bg-primary text-white py-16 px-4 md: h-full sm:px-8 lg:px-8">
-      <div className="mx-auto px-12">
+    <section className="w-full min-h-[150vh] bg-gradient-to-b from-white to-[#EEEEEE] text-[#222831] py-16 px-4 md:h-full sm:px-8 lg:px-8">
+      <motion.div 
+        className="mx-auto px-12"
+        initial={{ opacity: 0, y: 50 }} 
+        whileInView={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="text-center mb-12">
-          <LabelUnderLine name="Education & Experience" status={1} />
+          <LabelUnderLine name="Education & Experience" status={0} />
         </div>
 
-        <Tabs.Root 
-          className="flex flex-col"
-          defaultValue="education"
-        >
-          <Tabs.List className="flex mx-auto mb-12 bg-white/10 backdrop-blur-md rounded-lg p-1 border border-white/20">
+        <Tabs.Root className="flex flex-col" defaultValue="education">
+          <Tabs.List className="flex mx-auto mb-12 bg-[#ffffffcc] backdrop-blur-md rounded-lg p-1 border border-[#00ADB54D]">
             <Tabs.Trigger
               value="education"
-              className="px-6 py-2 text-sm font-medium rounded-md transition-all data-[state=active]:bg-white/20 data-[state=active]:text-[#00ADB5] data-[state=active]:shadow-sm text-white/80 hover:text-white"
+              className="px-6 py-2 text-sm font-medium rounded-md transition-all data-[state=active]:bg-[#00ADB54D] data-[state=active]:text-[#00ADB5] data-[state=active]:shadow-md text-[#222831cc] hover:text-[#222831]"
             >
               Education
             </Tabs.Trigger>
             <Tabs.Trigger
               value="experience"
-              className="px-6 py-2 text-sm font-medium rounded-md transition-all data-[state=active]:bg-white/20 data-[state=active]:text-[#00ADB5] data-[state=active]:shadow-sm text-white/80 hover:text-white"
+              className="px-6 py-2 text-sm font-medium rounded-md transition-all data-[state=active]:bg-[#00ADB54D] data-[state=active]:text-[#00ADB5] data-[state=active]:shadow-md text-[#222831cc] hover:text-[#222831]"
             >
               Experience
             </Tabs.Trigger>
           </Tabs.List>
 
           <Tabs.Content value="education" className="outline-none">
-            <div className="h-full [&_.react-chrono-timeline]:!bg-white/20">
+            <div className="h-full">
               <Chrono
                 items={education}
                 mode="VERTICAL_ALTERNATING"
@@ -129,9 +131,9 @@ const EAndESection = () => {
                 timelinePointDimension={20}
                 theme={customTheme}
                 classNames={{
-                  card: '!bg-white/10 !backdrop-blur-md !border !border-white/20 !rounded-2xl !shadow-lg !p-6 !transition-all hover:!bg-white/20 hover:!shadow-xl',
-                  cardSubTitle: '!text-white/90 !mb-3',
-                  cardText: '!text-white/80 !leading-relaxed',
+                  card: '!bg-[#ffffffcc] !backdrop-blur-md !border !border-[#00ADB54D] !rounded-2xl !shadow-lg !p-6 !transition-all hover:!bg-white hover:!shadow-xl',
+                  cardSubTitle: '!text-[#393E46] !mb-3',
+                  cardText: '!text-[#222831] !leading-relaxed',
                   cardTitle: '!text-[#00ADB5] !font-semibold !mb-2',
                 }}
               />
@@ -139,7 +141,7 @@ const EAndESection = () => {
           </Tabs.Content>
 
           <Tabs.Content value="experience" className="outline-none">
-            <div className="h-full [&_.react-chrono-timeline]:!bg-white/20">
+            <div className="h-full">
               <Chrono
                 items={experience}
                 mode="VERTICAL_ALTERNATING"
@@ -158,17 +160,17 @@ const EAndESection = () => {
                 timelinePointDimension={20}
                 theme={customTheme}
                 classNames={{
-                  card: '!bg-white/10 !backdrop-blur-md !border !border-white/20 !rounded-2xl !shadow-lg !p-6 !transition-all hover:!bg-white/20 hover:!shadow-xl',
-                  cardSubTitle: '!text-white/90 !mb-3',
-                  cardText: '!text-white/80 !leading-relaxed',
+                  card: '!bg-[#ffffffcc] !backdrop-blur-md !border !border-[#00ADB54D] !rounded-2xl !shadow-lg !p-6 !transition-all hover:!bg-white hover:!shadow-xl',
+                  cardSubTitle: '!text-[#393E46] !mb-3',
+                  cardText: '!text-[#222831] !leading-relaxed',
                   cardTitle: '!text-[#00ADB5] !font-semibold !mb-2',
                 }}
               />
             </div>
           </Tabs.Content>
         </Tabs.Root>
-      </div>
-    </div>
+      </motion.div>
+    </section>
   );
 };
 

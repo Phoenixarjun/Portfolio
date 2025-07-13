@@ -54,7 +54,7 @@ const CertificationLayout = () => {
     };
 
     const countSpecializations = () => {
-      return 5; // placeholder or dynamic logic
+      return 5; 
     };
 
     const countInternships = () => {

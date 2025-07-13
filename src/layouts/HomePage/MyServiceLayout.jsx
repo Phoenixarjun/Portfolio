@@ -1,5 +1,15 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import ServiceCard from '../../components/HomePage/ServiceCard'
+
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+}
 
 const MyServiceLayout = () => {
   const services = [
@@ -29,18 +39,24 @@ const MyServiceLayout = () => {
       img: './logo/Cloud.png'
     }
   ]
-  
+
   return (
-    <div className='flex flex-col gap-8 items-center justify-center py-20 bg-white'>
-      <div className='flex flex-col gap-3 items-center justify-center'>
-        <h4 className='text-md sm:text-lg font-serif'>What I Will Do For You</h4>
-        <h1 className='text-3xl sm:text-5xl font-bold'>SERVICE</h1>
+    <div className='flex flex-col gap-12 items-center justify-center py-20 bg-[#EEEEEE]'>
+      <div className='flex flex-col gap-3 items-center justify-center text-center'>
+        <h4 className='text-md sm:text-2xl font-serif text-gray-600'>What I Will Do For You</h4>
+        <h1 className='text-3xl sm:text-4xl font-bold text-primary'>SERVICE</h1>
       </div>
-      <div className='flex flex-wrap items-center justify-center gap-5'>
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        className='flex flex-wrap items-center justify-center gap-8 px-4'
+      >
         {services.map((service, index) => (
           <ServiceCard key={index} service={service} />
         ))}
-      </div>
+      </motion.div>
     </div>
   )
 }

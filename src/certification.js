@@ -4,7 +4,7 @@ const certifications = [
     "description": "Certified in dynamic web application development, covering foundational JavaScript to advanced full-stack techniques, with hands-on project experience.",
     "logo": "./logo/Nxtwave.svg",
     "certificateImg": "",
-    "credentialLink": "https://certificates.ccbp.in/academy/static-website?id=JZBGHEBOGG",
+    "credentialLink": "https://certificates.ccbp.in/academy/dynamic-web-application?id=CKWGFEGIXW",
     "platforms": ["NxtWave"],
     "language": ["JavaScript", "HTML", "CSS"],
     "category": "Course",
@@ -99,17 +99,6 @@ const certifications = [
     "completionYear": "November 2023"
   },
   {
-    "name": "Build Your Own Dynamic Web Application",
-    "description": "Certified in building interactive web apps using HTML, CSS, and JavaScript through real-world projects.",
-    "logo": "./logo/Nxtwave.svg",
-    "certificateImg": "",
-    "credentialLink": "https://certificates.ccbp.in/academy/dynamic-web-application?id=CKWGFEGIXW",
-    "platforms": ["NxtWave"],
-    "language": ["HTML", "CSS", "JavaScript"],
-    "category": "Course",
-    "completionYear": "March 2024"
-  },
-  {
     "name": "Introduction to Databases",
     "description": "Certified in database fundamentals and querying using SQL, with insights into MongoDB.",
     "logo": "./logo/Nxtwave.svg",
@@ -120,6 +109,17 @@ const certifications = [
     "category": "Course",
     "completionYear": "April 2024"
   },
+  {
+  name: "Microsoft Azure AI Fundamentals: Generative AI",
+  description: "Microsoft Certified Azure AI Fundamentals (AI‑900): foundational knowledge in AI concepts, machine learning, computer vision, NLP, and generative AI workloads on Azure.",
+  logo: "./logo/Microsoft.svg", 
+  certificateImg: "", 
+  credentialLink: "https://learn.microsoft.com/api/achievements/share/en-us/NareshBA-5244/8ZYS7XTW?sharingId=AB6A47135F07E371",
+  platforms: ["Microsoft"],
+  language: ["English"],
+  category: "Certification",
+  completionYear: "April 2025"
+},
   {
     "name": "JavaScript Essentials",
     "description": "Certified in core JavaScript concepts including events, scope, hoisting, and asynchronous programming.",
@@ -154,6 +154,17 @@ const certifications = [
     "completionYear": "June 2024"
   },
   {
+  "name": "Microsoft Azure AI Fundamentals: Computer Vision",
+  "description": "Microsoft Certified AI-900 specialization in Computer Vision: foundational skills in image classification, object detection, facial recognition, and responsible AI using Azure AI Vision services.",
+  "logo": "./logo/Microsoft.svg",
+  "certificateImg": "",
+  "credentialLink": "https://learn.microsoft.com/api/achievements/share/en-us/NareshBA-5244/XQZGFU8Y?sharingId=AB6A47135F07E371", // Replace with actual link
+  "platforms": ["Microsoft"],
+  "language": ["English"],
+  "category": "Certification",
+  "completionYear": "April 2025"
+},
+  {
     "name": "Node JS",
     "description": "Certified in backend development using Node.js and Express, covering routing, APIs, and database integration.",
     "logo": "./logo/Nxtwave.svg",
@@ -176,6 +187,17 @@ const certifications = [
     "completionYear": "October 2024"
   },
   {
+  "name": "Microsoft Azure AI Fundamentals: Natural Language Processing",
+  "description": "Microsoft Certified AI-900 specialization in Natural Language Processing: foundational knowledge in text analytics, sentiment analysis, translation, and conversational AI using Azure Cognitive Services.",
+  "logo": "./logo/Microsoft.svg",
+  "certificateImg": "", 
+  "credentialLink": "https://learn.microsoft.com/api/achievements/share/en-us/NareshBA-5244/NVALRKAF?sharingId=AB6A47135F07E371", // Replace with actual link
+  "platforms": ["Microsoft"],
+  "language": ["English"],
+  "category": "Certification",
+  "completionYear": "April 2025"
+},
+  {
     "name": "Learnathon 2023",
     "description": "Participated in Learnathon 2023 by completing courses across platforms like Microsoft, Bentley, AWS, Celonis, and others, gaining knowledge in diverse domains.",
     "logo": "./logo/Ictacademy.png",
@@ -197,6 +219,17 @@ const certifications = [
     "category": "Competition",
     "completionYear": "September 2023",
   },
+  {
+  "name": "Fine-tune a foundation model with Azure Machine Learning",
+  "description": "Microsoft Certified: Hands-on experience fine-tuning large foundation models using Azure Machine Learning Studio, pipelines, and prompt engineering to customize model behavior.",
+  "logo": "./logo/Microsoft.svg",
+  "certificateImg": "", 
+  "credentialLink": "https://learn.microsoft.com/api/achievements/share/en-us/NareshBA-5244/JUCL8A4T?sharingId=AB6A47135F07E371", 
+  "platforms": ["Microsoft"],
+  "language": ["English"],
+  "category": "Certification",
+  "completionYear": "April 2025"
+},
   {
     "name": "Game Of Threads",
     "description": "Participation in the Game of Threads competition, demonstrating skills in coding through a series of challenges.",
@@ -230,6 +263,17 @@ const certifications = [
     "category": "Competition",
     "completionYear": "March 2024",
   },
+  {
+  "name": "Understand the Transformer architecture and explore large language models in Azure Machine Learning",
+  "description": "Microsoft Certified: Explored the core concepts of Transformer architecture and gained foundational insights into leveraging LLMs with Azure Machine Learning tools and infrastructure.",
+  "logo": "./logo/Microsoft.svg",
+  "certificateImg": "", 
+  "credentialLink": "https://learn.microsoft.com/api/achievements/share/en-us/NareshBA-5244/H7RFVQF8?sharingId=AB6A47135F07E371", // Replace with your shareable link
+  "platforms": ["Microsoft"],
+  "language": ["English"],
+  "category": "Certification",
+  "completionYear": "April 2025"
+},
   {
     "name": "Design Derbies",
     "description": "Won 1st place in Innovatia 2.0 National Level Symposium by developing a frontend web application during the design and development event, showcasing creativity, UI/UX skills, and rapid prototyping.",

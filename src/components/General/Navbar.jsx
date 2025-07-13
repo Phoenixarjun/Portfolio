@@ -37,7 +37,7 @@ const Navbar = ({ toggleOpen, handleToggle, isToggle }) => {
   ]
 
   return (
-    <nav className="relative w-full flex flex-col md:flex-row justify-start md:justify-center items-center gap-5 p-3 text-quaternary bg-primary z-10">
+    <nav className="relative w-full flex flex-col md:flex-row justify-start md:justify-center items-center gap-5 p-3 text-quaternary bg-black/80 z-10">
       <div className='rounded-full w-full md:w-auto'>
         <img src="/images/Profile.jpg" alt="Profile" width={40} className='rounded-full border border-tertiary' />
       </div>

@@ -43,7 +43,7 @@ const MyServiceSection = () => {
   const ServiceCard = ({ service }) => {
     return (
       <div
-        className="relative group rounded-2xl backdrop-blur-sm z-30 overflow-hidden transition-all duration-500 ease-out shadow-[0_0_30px_rgba(139,92,246,0.8),0_0_60px_rgba(139,92,246,0.5)] hover:shadow-[0_0_40px_rgba(139,92,246,0.9),0_0_80px_rgba(139,92,246,0.6)]"
+        className="group rounded-2xl backdrop-blur-sm z-30 overflow-hidden transition-all duration-500 ease-out shadow-[0_0_30px_rgba(139,92,246,0.8),0_0_60px_rgba(139,92,246,0.5)] hover:shadow-[0_0_40px_rgba(139,92,246,0.9),0_0_80px_rgba(139,92,246,0.6)]"
         style={{
           flex: '1 1 300px',
           maxWidth: '400px',
