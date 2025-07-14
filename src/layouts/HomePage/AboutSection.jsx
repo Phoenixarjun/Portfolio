@@ -4,7 +4,7 @@ import LabelUnderLine from '../../components/General/LabelUnderLine'
 
 const AboutSection = () => {
   return (
-    <div className='flex flex-col justify-around items-center text-center gap-4 p-8 py-12 text-primary bg-gradient-to-b from-white to-[#EEEEEE] md:text-left md:flex-row'>
+    <div className='flex flex-col justify-around items-center text-center gap-4 p-8 py-12 text-primary bg-gradient-to-b from-white to-[#EEEEEE] md:text-left md:flex-row' id="about">
       <div className='w-full flex flex-col justify-center gap-5 md:w-1/2'>
         <LabelUnderLine name='About' />
 

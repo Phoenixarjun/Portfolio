@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = ({ toggleOpen, handleToggle, isToggle }) => {
   const [open, setOpen] = useState(false);
@@ -21,7 +21,7 @@ const Navbar = ({ toggleOpen, handleToggle, isToggle }) => {
     },
     {
       name: 'Certifications',
-      link: '#portfolio',
+      link: '#certifications',
       pageLink: '/certifications'
     },
     {
@@ -33,11 +33,11 @@ const Navbar = ({ toggleOpen, handleToggle, isToggle }) => {
       name: 'Projects',
       link: '#portfolio',
       pageLink: '/projects'
-    }
+    },
   ]
 
   return (
-    <nav className="relative w-full flex flex-col md:flex-row justify-start md:justify-center items-center gap-5 p-3 text-quaternary bg-black/80 z-10">
+    <nav className="sticky top-0 w-full flex flex-col md:flex-row justify-start md:justify-center items-center gap-5 p-3 text-quaternary bg-black/80 z-50 backdrop-blur-md">
       <div className='rounded-full w-full md:w-auto'>
         <img src="/images/Profile.jpg" alt="Profile" width={40} className='rounded-full border border-tertiary' />
       </div>
@@ -45,6 +45,9 @@ const Navbar = ({ toggleOpen, handleToggle, isToggle }) => {
         {labels.map((label, index) => (
           <NavList key={index} name={label.name} link={label.link} pageLink={label.pageLink} />
         ))}
+      <li className='p-2 text-white hover:bg-tertiary w-full rounded-lg md:hover:text-tertiary md:hover:bg-primary transition duration-300 ease-in-out'>
+        <a href="https://medium.com/@phoenixarjun007" target='blank'>Blogs</a>
+      </li>
       </ul>
       {/* {isToggle && <ToggleButton toggleOpen={toggleOpen} handleToggle={handleToggle} />} */}
       <div className='absolute top-3 right-3 md:hidden' onClick={handleOpen}>
@@ -64,15 +67,22 @@ const Navbar = ({ toggleOpen, handleToggle, isToggle }) => {
   );
 }
 
+
 const NavList = ({ name, link, pageLink }) => {
-  return(
-    <Link to={`${pageLink}`}>
-      <li className='p-2 text-white hover:bg-tertiary w-full rounded-lg md:hover:text-tertiary md:hover:bg-primary transition duration-300 ease-in-out'>
-        <a href={`${link}`}>{name}</a>
-      </li>
-    </Link>
-  )
-}
+  const location = useLocation();
+  const isSamePage = location.pathname === pageLink;
+
+  return (
+    <li className='p-2 text-white hover:bg-tertiary w-full rounded-lg md:hover:text-tertiary md:hover:bg-primary transition duration-300 ease-in-out'>
+      {isSamePage ? (
+        <a href={link}>{name}</a>
+      ) : (
+        <Link to={pageLink}>{name}</Link>
+      )}
+    </li>
+  );
+};
+
 
 const ToggleButton = ({ toggleOpen, handleToggle }) => {
   return (

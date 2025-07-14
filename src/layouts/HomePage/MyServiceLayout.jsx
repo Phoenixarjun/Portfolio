@@ -41,7 +41,7 @@ const MyServiceLayout = () => {
   ]
 
   return (
-    <div className='flex flex-col gap-12 items-center justify-center py-20 bg-[#EEEEEE]'>
+    <div className='flex flex-col gap-12 items-center justify-center py-20 bg-[#EEEEEE]' id="services">
       <div className='flex flex-col gap-3 items-center justify-center text-center'>
         <h4 className='text-md sm:text-2xl font-serif text-gray-600'>What I Will Do For You</h4>
         <h1 className='text-3xl sm:text-4xl font-bold text-primary'>SERVICE</h1>
