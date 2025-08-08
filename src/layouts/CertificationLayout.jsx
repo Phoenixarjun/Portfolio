@@ -141,7 +141,7 @@ const CertificationLayout = () => {
         </h1>
       </div>
 
-      <div className='flex items-center justify-around mt-10 flex-wrap gap-4 p-5'>
+      <div className='flex flex-col items-center justify-around mt-10 flex-wrap gap-4 p-5 md:flex-row'>
         {labels.map((label, index) => (
           <CountCard key={index} label={label.name} count={label.count} />
         ))}

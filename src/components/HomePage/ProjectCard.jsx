@@ -7,7 +7,7 @@ const ProjectCard = ({ title, shortDescription, projectId, cardImg, domainImg })
 
   return (
     <motion.div
-      className='w-80 h-[55vh] relative group overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100'
+      className='w-80 min-h-[55vh] relative group overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100'
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}

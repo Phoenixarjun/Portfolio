@@ -105,7 +105,7 @@ const AllProjectLayout = () => {
           PROJECTS
         </h1>
       </div>
-      <div className='flex items-center justify-around mt-10'>
+      <div className='flex flex-col items-center justify-around mt-10 md:flex-row'>
         {labels.map((label, index) => (
           <CountCard key={index} label={label.name} count={label.count} />
         ))}
@@ -119,7 +119,7 @@ const AllProjectLayout = () => {
           name ='Projects'
         />
       </div>
-      <div className='flex flex-wrap items-center justify-center gap-8 mt-10'>
+      <div className='flex flex-wrap items-center justify-center gap-20 mt-10'>
         {filteredProjects.length > 0 ? (
           filteredProjects.map((item, index) => (
             <ProjectCard 

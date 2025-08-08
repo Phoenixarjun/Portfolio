@@ -49,7 +49,7 @@ const CertificateCardDesktop = ({ certification }) => {
             href={certification.credentialLink}
             target="_blank"
             rel="noopener noreferrer"
-            className='underline underline-offset-4 font-medium'
+            className='underline underline-offset-4 font-medium '
           >
             See Credential
           </a>
@@ -113,7 +113,7 @@ const CertificateCardMobile = ({ certification }) => {
             href={certification.credentialLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline underline-offset-4 font-medium mt-4 md:mt-6"
+            className="underline text-center underline-offset-4 font-medium mt-4 md:mt-6"
           >
             See Credential
           </a>
